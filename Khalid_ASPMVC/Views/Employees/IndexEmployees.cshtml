@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Employees>
+@{
+    ViewData["Title"] = "IndexEmployees";
+}
+
+<h1>IndexEmployees</h1>
+
+<partial name="_NotificationsPartial" />
+
+<div class="text-end">
+    <a asp-action="Create" class="byn btn-primary mb-3">Create New</a>
+
+</div>
+
+
+<table class="table table-striped mb-3">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phonenumber</th>
+            <th>Email</th>
+            <th>Job_id</th>
+            <th>Salary</th>
+            <th>Actions</th>
+            
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var Employees in Model)
+        {
+            <tr>
+                <td>@Employees.Id</td>
+                <td>@Employees.Name</td>
+                <td>@Employees.phonenumeber</td>
+                <td>@Employees.Email</td>
+                <td>@Employees.Job_id</td>
+                <td>@Employees.Salary</td>
+                <td>
+                    <a asp-action="Edit" asp-route-Id="@Employees.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-Id="@Employees.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+

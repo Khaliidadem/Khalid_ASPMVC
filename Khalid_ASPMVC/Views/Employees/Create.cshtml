@@ -1,0 +1,43 @@
+﻿@model Employees
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<div asp-validation-summary="All" class="text-bg-danger"></div>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Employees Name:</label>
+        <input asp-for="Name" name="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Employees phonenumeber:</label>
+        <input asp-for="phonenumeber" phonenumber="phonenumeber" class="form-control" />
+        <span asp-validation-for="phonenumeber" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Employees Email:</label>
+        <input asp-for="Email" Email="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Employees Job_id:</label>
+        <input asp-for="Job_id" name="Job_id" class="form-control" />
+        <span asp-validation-for="Job_id" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Employees Salary:</label>
+        <input asp-for="Salary" Salary="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+    <hr />
+    <button type="submit" class="btn  btn-primary">Save</button>
+
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

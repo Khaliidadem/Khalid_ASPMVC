@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "IndexProduct";
+}
+
+<h1>IndexProduct</h1>
+
+<partial name="_NotificationsPartial" />
+
+
+<div class="text-end">
+    <a asp-action="Create" class="byn btn-primary mb-3">Create New</a>
+
+</div>
+
+<table class="table table-striped mb-3">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>CreatedDate</th>
+            <th>IsAvailable</th>
+            <th>Actions</th>
+
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@product.Category</td>
+                <td>@product.CreatedDate</td>
+                <td>@product.IsAvailable</td>
+                <td>
+                    <a asp-action="Edit" asp-route-Id="@product.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-Id="@product.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+     
+</table>
+

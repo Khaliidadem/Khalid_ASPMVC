@@ -1,0 +1,69 @@
+﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"] ✅
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        toastr.success('@TempData["Success"]','Success');
+    </script>
+
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"] ❌
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        toastr.Error('@TempData["Error"]','Error');
+    </script>
+    
+}
+@if (TempData["Create"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Create"] ✅
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        toastr.Create('@TempData["Create"]','Create');
+    </script>
+
+    @* <script>
+        toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+    </script> *@
+}
+@if (TempData["Edit"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Edit"] ✅
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        toastr.Edit('@TempData["Edit"]','Edit');
+    </script>
+}
+@if (TempData["Delete"] != null)
+{
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Delete"] ✅
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        toastr.Delete('@TempData["Delete"]','Delete');
+    </script>
+}
